@@ -2,7 +2,9 @@
 GraphGL is a RESTful application programming interfaces (API's) that enables you to access data globally service. 
 After you register your app and get authentication tokens for a user or service, you can make requests to the GraphGL API's.
 
-### Getting Started for Windows 10
+#### Information of systems components
+
+#### Getting started for windows 10
 - Settings > Apps and Features > Program and Features. Kemudian Klik Turn Windows Features on or off. checklist under `Windows Subsystem for Linux` and `Virtual Machine Platform`
 - Windows Powershell
 ```
