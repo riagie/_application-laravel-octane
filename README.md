@@ -69,7 +69,7 @@ Software Report:
 Server version:	Apache/2.4.54 (Win64)
 PHP Version:	8.0.25 (cli) (built: Oct 25 2022 10:49:29) ( ZTS Visual C++ 2019 x64 )
 Mysql Version:	Ver 15.1 Distrib 10.4.25-MariaDB, for Win64 (AMD64), source revision 23ddc3518f999e003d54f7a069b63b73585588aa
-Laravel:		8 Release September 8th, 2020
+Laravel:	8.x Release September 8th, 2020
 Laravel Octane:	Swoole application
 ```
 
