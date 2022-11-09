@@ -71,8 +71,8 @@ PHP Version:	8.0.25 (cli) (built: Oct 25 2022 10:49:29) ( ZTS Visual C++ 2019 x6
 Mysql Version:	Ver 15.1 Distrib 10.4.25-MariaDB, for Win64 (AMD64)
 Framework:	Laravel
 Version:	8.x Release September 8th, 2020
-Server Application:	Octane
-Server Software:	swoole-http-server
+Application:	Octane
+Server:	swoole-http-server not roadrunner-http-server
 ```
 ```
 Server Report
