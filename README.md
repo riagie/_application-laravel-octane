@@ -111,8 +111,8 @@ PS wsl --list --verbose
 # systemctl is-enabled apache2.service or systemctl enable apache2.service
 # service apache2 status|start|stop|restart
 ```
-- config ports:	`# sudo nano /etc/apache2/ports.conf`
-- config file path:	`# sudo nano /etc/apache2/sites-available/000-default.conf`
+- config ports:	`# nano /etc/apache2/ports.conf`
+- config file path:	`# nano /etc/apache2/sites-available/000-default.conf`
 - ip address:	`# hostname -I`
 ```
 # apt-get install lsb-release ca-certificates apt-transport-https software-properties-common -y
