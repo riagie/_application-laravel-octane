@@ -72,7 +72,7 @@ Mysql Version:	Ver 15.1 Distrib 10.4.25-MariaDB, for Win64 (AMD64)
 Framework:	Laravel
 Version:	8.x Release September 8th, 2020
 Application:	Octane
-Server:	swoole-http-server not roadrunner-http-server
+Server:         swoole-http-server not roadrunner-http-server
 ```
 ```
 Server Report
@@ -108,8 +108,8 @@ PS wsl --list --verbose
 # apt update
 # apt upgrade
 # apt install apache2
-# sudo systemctl is-enabled apache2.service or sudo systemctl enable apache2.service
-# sudo service apache2 status|start|stop|restart
+# systemctl is-enabled apache2.service or systemctl enable apache2.service
+# service apache2 status|start|stop|restart
 ```
 - config ports:	`# sudo nano /etc/apache2/ports.conf`
 - config file path:	`# sudo nano /etc/apache2/sites-available/000-default.conf`
@@ -117,21 +117,21 @@ PS wsl --list --verbose
 ```
 # apt-get install lsb-release ca-certificates apt-transport-https software-properties-common -y
 # LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
-# sudo apt-get install php8.0
-# sudo apt install php8.0-amqp php8.0-common php8.0-gd php8.0-ldap php8.0-odbc php8.0-readline php8.0-sqlite3 php8.0-xsl php8.0-apcu php8.0-curl php8.0-gmp php8.0-mailparse php8.0-opcache php8.0-redis php8.0-sybase php8.0-ast php8.0-dba php8.0-igbinary php8.0-mbstring php8.0-pgsql php8.0-rrd php8.0-tidy php8.0-yaml php8.0-bcmath php8.0-dev php8.0-imagick php8.0-memcached php8.0-phpdbg php8.0-smbclient php8.0-uuid php8.0-zip php8.0-bz2 php8.0-ds php8.0-imap php8.0-msgpack php8.0-pspell php8.0-snmp php8.0-xdebug php8.0-zmq php8.0-cgi php8.0-enchant php8.0-interbase php8.0-mysql php8.0-psr php8.0-soap php8.0-xhprof php8.0-cli php8.0-intl php8.0-oauth php8.0-raphf php8.0-solr php8.0-xml php-pear php8.0-geoip php8.0-sockets php8.0-swoole php8.0-fpm libapache2-mod-php8.0
+# apt-get install php8.0
+# apt install php8.0-amqp php8.0-common php8.0-gd php8.0-ldap php8.0-odbc php8.0-readline php8.0-sqlite3 php8.0-xsl php8.0-apcu php8.0-curl php8.0-gmp php8.0-mailparse php8.0-opcache php8.0-redis php8.0-sybase php8.0-ast php8.0-dba php8.0-igbinary php8.0-mbstring php8.0-pgsql php8.0-rrd php8.0-tidy php8.0-yaml php8.0-bcmath php8.0-dev php8.0-imagick php8.0-memcached php8.0-phpdbg php8.0-smbclient php8.0-uuid php8.0-zip php8.0-bz2 php8.0-ds php8.0-imap php8.0-msgpack php8.0-pspell php8.0-snmp php8.0-xdebug php8.0-zmq php8.0-cgi php8.0-enchant php8.0-interbase php8.0-mysql php8.0-psr php8.0-soap php8.0-xhprof php8.0-cli php8.0-intl php8.0-oauth php8.0-raphf php8.0-solr php8.0-xml php-pear php8.0-geoip php8.0-sockets php8.0-swoole php8.0-fpm libapache2-mod-php8.0
 ```
 - switch version php multi:
 ```
-# sudo update-alternatives --config php
-# sudo update-alternatives --config phar
-# sudo update-alternatives --config phar.phar
+# update-alternatives --config php
+# update-alternatives --config phar
+# update-alternatives --config phar.phar
 
-# sudo update-alternatives --set php /usr/bin/php8.0
-# sudo update-alternatives --set phar /usr/bin/phar8.0
-# sudo update-alternatives --set phar.phar /usr/bin/phar.phar8.0
+# update-alternatives --set php /usr/bin/php8.0
+# update-alternatives --set phar /usr/bin/phar8.0
+# update-alternatives --set phar.phar /usr/bin/phar.phar8.0
 ```
 ```
-# sudo curl -s https://getcomposer.org/installer | /usr/bin/php
-# sudo mv composer.phar /usr/bin/composer
+# curl -s https://getcomposer.org/installer | /usr/bin/php
+# mv composer.phar /usr/bin/composer
 # export COMPOSER_ALLOW_SUPERUSER=1; composer show;
 ```
