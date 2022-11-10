@@ -101,7 +101,7 @@ PS systeminfo | find "System Type"
 PS wsl --set-default-version 2
 PS wsl --list --verbose
 ```
-- Open the Linux application that has been installed from the Microsoft Store application
+- Open the Linux application that has been installed from the Microsoft Store application.
 
 #### Setting Server linux
 ```
