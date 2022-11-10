@@ -114,7 +114,7 @@ PS wsl --list --verbose
 - config ports:	`# nano /etc/apache2/ports.conf`
 - config file path:	`# nano /etc/apache2/sites-available/000-default.conf`
 - shared folder windows to linux `sudo ln -s "/mnt/<drive>/<folder>" /var/www/html/GraphGL`
-- delete folder shared `sudo rm -d v.0.0.5`
+- shared delete folder `sudo rm -d v.0.0.5`
 - ip address:	`# hostname -I`
 ```
 # apt-get install lsb-release ca-certificates apt-transport-https software-properties-common -y
