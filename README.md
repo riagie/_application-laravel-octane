@@ -95,15 +95,15 @@ PS systeminfo | find "System Type"
 ```
 - download and install according to systeminfo
 [x64](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) or [arm64](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi)
-- Open the Microsoft Store application, then find the Linux system you want to install.
+- open the Microsoft Store application, then find the Linux system you want to install.
 - Windows Powershell
 ```
 PS wsl --set-default-version 2
 PS wsl --list --verbose
 ```
-- Open the Linux application that has been installed from the Microsoft Store application.
+- open the Linux application that has been installed from the Microsoft Store application.
 
-#### Setting Server linux
+#### Setting server linux
 ```
 # apt update
 # apt upgrade
@@ -113,9 +113,9 @@ PS wsl --list --verbose
 ```
 - config ports:	`# nano /etc/apache2/ports.conf`
 - config file path:	`# nano /etc/apache2/sites-available/000-default.conf`
-- shared folder windows to linux `sudo ln -s "/mnt/<drive>/<folder>" /var/www/html/GraphGL`
-- shared delete folder `sudo rm -d v.0.0.5`
-- ip address:	`# hostname -I`
+- shared folder windows to linux `# sudo ln -s "/mnt/<drive>/<folder>" /var/www/html/GraphGL`
+- shared delete folder `# sudo rm -d v.0.0.5`
+- IP Address:	`# hostname -I`
 ```
 # apt-get install lsb-release ca-certificates apt-transport-https software-properties-common -y
 # LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
@@ -132,8 +132,71 @@ PS wsl --list --verbose
 # update-alternatives --set phar /usr/bin/phar8.0
 # update-alternatives --set phar.phar /usr/bin/phar.phar8.0
 ```
+- install composer:
 ```
 # curl -s https://getcomposer.org/installer | /usr/bin/php
 # mv composer.phar /usr/bin/composer
 # export COMPOSER_ALLOW_SUPERUSER=1; composer show;
+```
+#### Laravel Octane
+- install laravel:
+```
+# composer create-project --prefer-dist laravel/laravel="^8" .
+# composer require laravel/octane
+# php artisan octane:install
+```
+- config file `.env`
+```
+OCTANE_HTTPS=true
+OCTANE_SERVER=swoole or roadrunner
+```
+- automatically file server update (optional):
+```
+# apt install npm
+# npm config set fetch-retries 5
+# npm config set fetch-retry-mintimeout 150000
+# npm config set fetch-retry-maxtimeout 300000
+# npm config set fetch-timeout 600000
+# npm install --save-dev chokidar
+```
+#### Running
+```
+# php artisan octane:status|start|stop|reload
+```
+- command: 
+```
+--watch (required chokidar)
+--server=swoole|roadrunner
+--host=127.0.0.1
+--port=8000
+--workers=5
+--task-workers=10
+--max-requests=1000
+```
+#### Results
+```
+# wrk -t10 -c100 -d5s {{server_local}}
+```
+- swoole
+```
+Running 5s test @ http://127.0.0.1:8000
+  10 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.38s   197.90ms   1.97s    79.59%
+    Req/Sec    11.28      9.05    30.00     62.79%
+  139 requests in 5.02s, 2.48MB read
+  Socket errors: connect 0, read 0, write 0, timeout 41
+Requests/sec:     27.69
+Transfer/sec:    505.27KB
+```
+- roadrunner
+```
+Running 5s test @ http://127.0.0.1:8000
+  10 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.56s   571.06ms   1.98s    80.78%
+    Req/Sec    12.91     12.03    50.00     84.46%
+  255 requests in 5.03s, 4.54MB read
+Requests/sec:     50.67
+Transfer/sec:      0.90MB
 ```
