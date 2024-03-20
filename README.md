@@ -8,7 +8,7 @@ Hardware Report:
 
 Host Name:                 9F079636H
 OS Name:                   Microsoft Windows 10 Pro
-OS Version:                10.0.19043 N/A Build 19043
+OS Version:                10.0.19045 N/A Build 19045
 OS Manufacturer:           Microsoft Corporation
 OS Configuration:          Standalone Workstation
 OS Build Type:             Multiprocessor Free
@@ -16,10 +16,11 @@ Registered Owner:          {{users}}
 Registered Organization:
 Product ID:                00330-50000-00000-AAOEM
 Original Install Date:     11/1/2022, 8:20:54 PM
-System Boot Time:          11/7/2022, 1:51:51 PM
+System Boot Time:          3/4/2024, 8:23:55 PM
 System Manufacturer:       TOSHIBA
 System Model:              PORTEGE Z30-B
 System Type:               x64-based PC
+Model name:                Intel(R) Core(TM) i5-5300U CPU @ 2.30GHz
 Processor(s):              1 Processor(s) Installed.
                            [01]: Intel64 Family 6 Model 61 Stepping 4 GenuineIntel ~2300 Mhz
 BIOS Version:              TOSHIBA Version 6.50  , 3/6/2018
@@ -30,48 +31,66 @@ System Locale:             en-us;English (United States)
 Input Locale:              en-us;English (United States)
 Time Zone:                 (UTC+07:00) Bangkok, Hanoi, Jakarta
 Total Physical Memory:     16,279 MB
-Available Physical Memory: 7,268 MB
-Virtual Memory: Max Size:  19,223 MB
-Virtual Memory: Available: 10,034 MB
-Virtual Memory: In Use:    9,189 MB
+Available Physical Memory: 5,638 MB
+Virtual Memory: Max Size:  20,631 MB
+Virtual Memory: Available: 5,162 MB
+Virtual Memory: In Use:    15,469 MB
 Page File Location(s):     C:\pagefile.sys
 Domain:                    WORKGROUP
 Logon Server:              \\9F079636H
-Hotfix(s):                 6 Hotfix(s) Installed.
-                           [01]: KB5018329
-                           [02]: KB5000736
-                           [03]: KB5012170
-                           [04]: KB5018482
-                           [05]: KB5018506
-                           [06]: KB5001405
+Hotfix(s):                 23 Hotfix(s) Installed.
+                           [01]: KB5034466
+                           [02]: KB5027122
+                           [03]: KB5000736
+                           [04]: KB5011048
+                           [05]: KB5012170
+                           [06]: KB5015684
+                           [07]: KB5034843
+                           [08]: KB5018506
+                           [09]: KB5020372
+                           [10]: KB5022924
+                           [11]: KB5023794
+                           [12]: KB5025315
+                           [13]: KB5026879
+                           [14]: KB5028318
+                           [15]: KB5028380
+                           [16]: KB5029709
+                           [17]: KB5031539
+                           [18]: KB5031540
+                           [19]: KB5032392
+                           [20]: KB5032907
+                           [21]: KB5034224
+                           [22]: KB5035225
+                           [23]: KB5001405
 Network Card(s):           3 NIC(s) Installed.
-                           [01]: Intel(R) Ethernet Connection (3) I218-LM
-                                 Connection Name: Ethernet
-                                 Status:          Media disconnected
-                           [02]: Intel(R) Dual Band Wireless-AC 7265
+                           [01]: Intel(R) Dual Band Wireless-AC 7265
                                  Connection Name: Wi-Fi
                                  DHCP Enabled:    Yes
-                                 DHCP Server:     192.168.43.1
+                                 DHCP Server:     192.168.109.248
                                  IP address(es)
-                                 [01]: 192.168.43.227
-                                 [02]: fe80::3ce6:38e2:89da:add4
+                                 [01]: 192.168.109.167
+                                 [02]: fe80::7fa:571e:63e0:d146
+                           [02]: Intel(R) Ethernet Connection (3) I218-LM
+                                 Connection Name: Ethernet
+                                 Status:          Media disconnected
                            [03]: Hyper-V Virtual Ethernet Adapter
                                  Connection Name: vEthernet (WSL)
                                  DHCP Enabled:    No
                                  IP address(es)
-                                 [01]: 172.25.48.1
-                                 [02]: fe80::da63:18e9:fd8f:5ffc
+                                 [01]: 172.28.80.1
+                                 [02]: fe80::ca69:8753:f1a:aab3
 Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
 ```
 ```
 Software Report:
 
-Server version:	Apache/2.4.54 (Win64)
-PHP Version:	8.0.25 (cli) (built: Oct 25 2022 10:49:29) ( ZTS Visual C++ 2019 x64 )
-Mysql Version:	Ver 15.1 Distrib 10.4.25-MariaDB, for Win64 (AMD64)
-Framework:	Laravel
-Version:	8.x Release September 8th, 2020
-Application:	Octane
+Server version: Apache/2.4.52 (Ubuntu)
+Server built:   2024-01-17T03:00:18
+PHP Version:	  PHP 8.0.30 (cli) (built: Mar  7 2024 08:52:11) ( NTS )
+Mysql Version:	Ver 8.0.36-0ubuntu0.22.04.1 for Linux on x86_64 ((Ubuntu))
+Framework:	    Laravel
+Version:	      9.52.16
+Application:	  Octane
 Server:         swoole-http-server not roadrunner-http-server
 ```
 ```
@@ -79,7 +98,7 @@ Server Report
 
 No LSB modules are available.
 Distributor ID: Ubuntu
-Description:    Ubuntu 22.04.1 LTS
+Description:    Ubuntu 22.04.4 LTS
 Release:        22.04
 Codename:       jammy
 ```
@@ -169,8 +188,8 @@ OCTANE_SERVER=swoole or roadrunner
 --server=swoole|roadrunner
 --host=127.0.0.1
 --port=8000
---workers=5
---task-workers=10
+--workers=10
+--task-workers=100
 --max-requests=1000
 ```
 #### Results
@@ -180,23 +199,22 @@ OCTANE_SERVER=swoole or roadrunner
 - swoole
 ```
 Running 5s test @ http://127.0.0.1:8000
-  10 threads and 100 connections
+  100 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.38s   197.90ms   1.97s    79.59%
-    Req/Sec    11.28      9.05    30.00     62.79%
-  139 requests in 5.02s, 2.48MB read
-  Socket errors: connect 0, read 0, write 0, timeout 41
-Requests/sec:     27.69
-Transfer/sec:    505.27KB
+    Latency   341.71ms  226.46ms   1.14s    76.71%
+    Req/Sec     3.99      3.07    40.00     83.79%
+  1523 requests in 5.10s, 362.90KB read
+Requests/sec:    298.45
+Transfer/sec:     71.11KB
 ```
 - roadrunner
 ```
 Running 5s test @ http://127.0.0.1:8000
-  10 threads and 100 connections
+  100 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.56s   571.06ms   1.98s    80.78%
-    Req/Sec    12.91     12.03    50.00     84.46%
-  255 requests in 5.03s, 4.54MB read
-Requests/sec:     50.67
-Transfer/sec:      0.90MB
+    Latency   382.40ms  296.42ms   1.11s    72.26%
+    Req/Sec     4.33      3.68    30.00     79.24%
+  1278 requests in 5.10s, 239.62KB read
+Requests/sec:    250.55
+Transfer/sec:     46.98KB
 ```
