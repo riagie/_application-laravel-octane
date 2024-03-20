@@ -86,11 +86,11 @@ Software Report:
 
 Server version: Apache/2.4.52 (Ubuntu)
 Server built:   2024-01-17T03:00:18
-PHP Version:	  PHP 8.0.30 (cli) (built: Mar  7 2024 08:52:11) ( NTS )
+PHP Version:	PHP 8.0.30 (cli) (built: Mar  7 2024 08:52:11) ( NTS )
 Mysql Version:	Ver 8.0.36-0ubuntu0.22.04.1 for Linux on x86_64 ((Ubuntu))
-Framework:	    Laravel
-Version:	      9.52.16
-Application:	  Octane
+Framework:	Laravel
+Version:	9.52.16
+Application:	Octane
 Server:         swoole-http-server not roadrunner-http-server
 ```
 ```
