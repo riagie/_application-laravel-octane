@@ -104,7 +104,7 @@ Codename:       jammy
 ```
 
 #### Getting started for Windows 10
-- Settings > Apps and Features > Program and Features. Kemudian Klik Turn Windows Features on or off. checklist under `Windows Subsystem for Linux` and `Virtual Machine Platform`
+- Settings > Apps and Features > Program and Features. Click Turn Windows Features on or off. checklist under `Windows Subsystem for Linux` and `Virtual Machine Platform`
 - Windows Powershell
 ```
 PS wsl --install `optional poin one`
@@ -132,7 +132,7 @@ PS wsl --list --verbose
 ```
 - config ports:	`# nano /etc/apache2/ports.conf`
 - config file path:	`# nano /etc/apache2/sites-available/000-default.conf`
-- shared folder windows to linux `# sudo ln -s "/mnt/<drive>/<folder>/" /var/www/html/GraphGL`
+- shared folder windows to linux `# sudo ln -s "/mnt/<drive>/<folder>/" /var/www/html/CDC-RESTful`
 - shared delete folder `# sudo rm -d v.0.0.5`
 - IP Address:	`# hostname -I`
 ```
@@ -179,7 +179,7 @@ OCTANE_SERVER=swoole or roadrunner
 # npm config set fetch-timeout 600000
 # npm install --save-dev chokidar
 ```
-#### Running
+#### Running Console
 ```
 # php artisan octane:status|start|stop|reload
 ```
@@ -192,6 +192,34 @@ OCTANE_SERVER=swoole or roadrunner
 --workers=10
 --task-workers=100
 --max-requests=1000
+```
+#### Running Supervisor
+- install supervisor:
+```
+# apt install supervisor
+```
+- config supervisor:	`# nano /etc/supervisor/conf.d/octane.conf`
+```
+[program:octane]
+command=php artisan octane:start --watch --server=swoole --workers=10 --task-workers=100 --max-requests=1000
+directory=/var/www/html/CDC-RESTful
+autostart=true
+autorestart=true
+stderr_logfile=/var/log/octane.err.log
+stdout_logfile=/var/log/octane.out.log
+```
+- config file path:	`# nano /etc/apache2/sites-available/000-default.conf`
+```
+ProxyPass / http://127.0.0.1:8000/
+ProxyPassReverse / http://127.0.0.1:8000/
+```
+```
+# supervisorctl reread
+# supervisorctl status|start octane|update|stop
+# a2enmod proxy
+# a2enmod proxy_http
+# a2ensite 000-default.conf
+# service apache2 restart
 ```
 #### Results
 ```
