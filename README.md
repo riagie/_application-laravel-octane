@@ -132,7 +132,7 @@ PS wsl --list --verbose
 ```
 - config ports:	`# nano /etc/apache2/ports.conf`
 - config file path:	`# nano /etc/apache2/sites-available/000-default.conf`
-- shared folder windows to linux `# sudo ln -s "/mnt/<drive>/<folder>/" /var/www/html/CDC-RESTful`
+- shared folder windows to linux `# sudo ln -s "/mnt/<drive>/<folder>/" /var/www/html/CDC-RESTful` or install samba
 - shared delete folder `# sudo rm -d v.0.0.5`
 - IP Address:	`# hostname -I`
 ```
