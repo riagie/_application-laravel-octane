@@ -130,9 +130,9 @@ PS wsl --list --verbose
 # systemctl is-enabled apache2.service or systemctl enable apache2.service
 # service apache2 status|start|stop|restart
 ```
-- config ports:	`# nano /etc/apache2/ports.conf`
+- config ports:	`# nano /etc/apache2/ports.conf` to see which ports are already in use `lsof -i -P -n`
 - config file path:	`# nano /etc/apache2/sites-available/000-default.conf`
-- shared folder windows to linux `# sudo ln -s "/mnt/<drive>/<folder>/" /var/www/html/CDC-RESTful` or install samba
+- shared folder windows to linux `# sudo ln -s "/mnt/<drive>/<folder>/" /var/www/html/CDC-RESTful`
 - shared delete folder `# sudo rm -d v.0.0.5`
 - IP Address:	`# hostname -I`
 ```
@@ -222,6 +222,13 @@ ProxyPassReverse / http://127.0.0.1:8000/
 # service apache2 restart
 ```
 #### Results
+- traffic monitoring 
+```
+# apt install htop
+# htop
+```
+
+
 ```
 # wrk -t10 -c100 -d5s {{server_local}}
 ```
