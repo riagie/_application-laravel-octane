@@ -221,14 +221,12 @@ ProxyPassReverse / http://127.0.0.1:8000/
 # a2ensite 000-default.conf
 # service apache2 restart
 ```
-#### Results
-- traffic monitoring 
+#### Traffic Monitoring
 ```
 # apt install htop
 # htop
 ```
-
-
+#### Results
 ```
 # wrk -t10 -c100 -d5s {{server_local}}
 ```
